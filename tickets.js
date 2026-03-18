@@ -2,8 +2,33 @@ let tickets = [];
 
 function createTicket(user, issue, priority){
 
+    // Validate required fields
+    if(!user || !issue || !priority){
+        return { error: "All fields are required" };
+    }
+
+    // Normalize input
+    user = user.trim();
+    issue = issue.trim();
+    priority = priority.trim();
+
+    // Validate priority values
+    const validPriorities = ["Low","Medium","High"];
+
+    if(!validPriorities.includes(priority)){
+        return { error: "Priority must be Low, Medium or High" };
+    }
+
+    // Generate unique ID (defensive programming)
+    let id;
+
+    do{
+        id = Date.now();
+    } 
+    while(tickets.find(ticket => ticket.id === id));
+
     let ticket = {
-        id: tickets.length + 1,
+        id: id,
         user: user,
         issue: issue,
         priority: priority,
@@ -13,7 +38,7 @@ function createTicket(user, issue, priority){
 
     tickets.push(ticket);
 
-    console.log("Ticket created:", ticket);
+    return ticket;
 }
 
 function listTickets(){
