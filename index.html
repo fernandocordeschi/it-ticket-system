@@ -2,22 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket System Demo</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h1>Ticket System Demo</h1>
+    <header>
+        <h1>🎫 Ticket System Demo</h1>
+    </header>
 
-<div class="buttons">
-    <button id="create">Crear Ticket</button>
-    <button id="list">Listar Tickets</button>
-    <button id="close">Cerrar Ticket</button>
-    <button id="reopen">Reabrir Ticket</button>
-</div>
+    <main>
+        <div id="ticket-container">
+            <!-- Las tarjetas de los tickets se insertarán aquí -->
+        </div>
+    </main>
 
-<pre id="log"></pre>
-
-<script type="module" src="js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
