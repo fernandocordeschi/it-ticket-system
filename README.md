@@ -22,8 +22,8 @@ Clona este repositorio y abre en tu entorno de desarrollo:
 
 ```bash
 
-git clone https://github.com/FernandoCordeschi/ticket-system-js
-cd ticket-system-js
+git clone https://github.com/FernandoCordeschi/it-ticket-system
+cd it-ticket-system
 
 ```javascript
 const system = new TicketSystem();
